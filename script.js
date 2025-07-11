@@ -148,7 +148,7 @@ window.onscroll = () => {
      * 5. Replace the placeholder values below with your actual keys.
      *******************************************************************/
     emailjs.init({
-      publicKey: "MY_PUBLIC_KEY", // <-- PASTE YOUR PUBLIC KEY HERE
+      publicKey: "TcmxOSTjJsK3rzb_d", // <-- PASTE YOUR PUBLIC KEY HERE
     });
 })();
 
@@ -163,11 +163,11 @@ contactForm.addEventListener('submit', function(event) {
     submitBtn.disabled = true;
 
     // These IDs from the EmailJS account page
-    const serviceID = 'MY_SERVICE_ID'; // <-- PASTE YOUR SERVICE ID HERE
-    const templateID = 'MY_TEMPLATE_ID'; // <-- PASTE YOUR TEMPLATE ID HERE
+    const serviceID = 'service_xdo06ck'; // <-- PASTE YOUR SERVICE ID HERE
+    const templateID = 'template_g6szetc'; // <-- PASTE YOUR TEMPLATE ID HERE
 
     // Check if placeholder values have been replaced
-    if (serviceID === 'MY_SERVICE_ID' || templateID === 'MY_TEMPLATE_ID' || emailjs.config.publicKey === 'MY_PUBLIC_KEY') {
+    if (serviceID === 'service_xdo06ck' || templateID === 'template_g6szetc' || emailjs.config.publicKey === 'TcmxOSTjJsK3rzb_d') {
         statusMessage.innerHTML = "EmailJS is not configured.";
         statusMessage.style.color = '#ff4d4d'; // Error color
         submitBtn.value = 'Send Message';
