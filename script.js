@@ -137,18 +137,8 @@ window.onscroll = () => {
 
 // --- 4. Contact Form Functionality with EmailJS ---
 (function() {
-    /*******************************************************************
-     * EMAILJS SETUP INSTRUCTIONS
-     * -----------------------------------------------------------------
-     * To make this form work, you need a free account from EmailJS.
-     * 1. Go to https://www.emailjs.com and sign up.
-     * 2. Add a new email service (e.g., Gmail).
-     * 3. Create a new email template. Note the Template ID.
-     * 4. Find your Public Key and Service ID in your account settings.
-     * 5. Replace the placeholder values below with your actual keys.
-     *******************************************************************/
     emailjs.init({
-      publicKey: "TcmxOSTjJsK3rzb_d", // <-- PASTE YOUR PUBLIC KEY HERE
+      publicKey: "TcmxOSTjJsK3rzb_d",
     });
 })();
 
@@ -162,18 +152,11 @@ contactForm.addEventListener('submit', function(event) {
     submitBtn.value = 'Sending...';
     submitBtn.disabled = true;
 
-    // These IDs from the EmailJS account page
-    const serviceID = 'service_xdo06ck'; // <-- PASTE YOUR SERVICE ID HERE
-    const templateID = 'template_g6szetc'; // <-- PASTE YOUR TEMPLATE ID HERE
+    const serviceID = 'service_xdo06ck';
+    const templateID = 'template_g6szetc';
 
-    // Check if placeholder values have been replaced
-    if (serviceID === 'service_xdo06ck' || templateID === 'template_g6szetc' || emailjs.config.publicKey === 'TcmxOSTjJsK3rzb_d') {
-        statusMessage.innerHTML = "EmailJS is not configured.";
-        statusMessage.style.color = '#ff4d4d'; // Error color
-        submitBtn.value = 'Send Message';
-        submitBtn.disabled = false;
-        return; // Stop the function
-    }
+    // *** THE FAULTY 'IF' BLOCK HAS BEEN REMOVED. ***
+    // The code now directly tries to send the form.
 
     emailjs.sendForm(serviceID, templateID, this)
         .then(() => {
